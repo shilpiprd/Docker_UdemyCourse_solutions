@@ -1,0 +1,12 @@
+sudo docker container run -p 80:80 nginx 
+sudo docker conatainer run -p 8080:80 -d httpd
+sudo docker container run -p 3306:3306 -d -e "MYSQL_RANDOM_ROOT_PASSWORD=yes" --name webhost mysql #there should be no space before and after '=' sign. 
+#i forgot to give a name to nginx, using rename option 
+docker rename f583 my_nginx (provided nginx id) 
+#now to find the random generated password in mysql: this is how you get password to login to ur sql server
+sudo docker logs webhost 
+docker stop id1 id2 id3 #or do docker container stop ids..
+docker ps -a  #this would should you that all processes are exiting with exit code(0) 
+sudo docker container ls #this doesn't pritn anything. 
+#to remove the conatiners now properly, you can do: 
+docker container rm ids...   

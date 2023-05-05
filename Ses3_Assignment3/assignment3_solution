@@ -1,0 +1,10 @@
+docker network create buddy #spans a new virtual network for you to attach containers to with default driver as bridge.
+docker container run -d --network buddy --name elas1 --network-alias=my_alias elasticsearch:2 
+docker container run -d --network buddy --name elas2 --network-alias=my_alias elasticsearch:2 
+docker container ls #this shows the 2 running containers.
+#now we'll create an alpine image to do nslookup search. 
+docker container run --rm --network buddy alpine nslookup my_alias.
+#the dot at the end of my_alias is very important otherwise you'll get some kind of domain appended to the query.
+#now we'll run centos curl -s search:9200 (elasticsearch has 9200 port) with --net
+docker container run --rm --network buddy centos curl -s my_alias:9200
+

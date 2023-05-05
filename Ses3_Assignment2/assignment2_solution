@@ -1,0 +1,19 @@
+docker container run -it --name my_ubuntu ubuntu:14.04 bash.
+apt-get update && apt-get install curl
+curl --version
+exit 
+sudo docker container ls #doesn't give anything
+
+#in terminal2: 
+docker container run -it --name my_centos centos:7 bash 
+yum update curl
+curl --version
+exit 
+sudo docker container ls #doesn't print anything
+
+#We didn't see any option on sudo docker ls coz none of the containers are running at the moment, they're in stopped state. 
+#this is verifiable if we do: 
+sudo docker ps -a 
+#this would show all containers whether running or stopped.
+#these containers can be properly killed by doing: sudo docker rm <container_name_or_id>
+sudo docker rm my_ubuntu my_centos
