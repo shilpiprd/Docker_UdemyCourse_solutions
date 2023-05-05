@@ -7,5 +7,7 @@ It containes some information and the Tasks which needs to be done in the readme
 And a file named solution contains the code I executed in my docker virtual environment to complete the task.</br>
 </br>
 </br>
-Happy Dockering!
-<img src="https://raw.githubusercontent.com/shilpiprd/Docker_UdemyCourse_solutions/master/image/docker.webp" alt="Image" width="600" height="600">
+<h1>Happy Dockering!</h1>
+</br>
+</br>
+<img src="https://raw.githubusercontent.com/shilpiprd/Docker_UdemyCourse_solutions/master/image/docker.webp" alt="Image" width="800" height="600">
