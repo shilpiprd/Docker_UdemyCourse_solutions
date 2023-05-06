@@ -1,0 +1,6 @@
+cd ~/Documents/udemy-docker-mastery/bindmount-sample-1 
+docker run -p 80:4000 -v $(pwd):/site bretfisher/jekyll-serve 
+#open local host , u should see the default template
+#now make any changes inside the _posts folder. On hitting refresh in the browser, ud see that the changes are reflected.
+docker logs
+

@@ -1,0 +1,17 @@
+#create a container of postgres: 9.6.1
+cd ~/Documents/Coding/Docker_Assignments/Ses5_Assignment1
+docker container -d run --name my_postgres -v $(pwd)/my_pos_db:/var/lib/postgresql/data postgres:9.6.1
+#VOLUME /var/lib/postgresql/data (found from docker hub)
+docker logs my_postgres 
+docker volume ls
+#you should see ur volume there, 
+docker container stop my_postgres
+#we need to change version in both containers, 
+docker container run -d --name my_postgres_2 -v $(pwd)/my_pos_db:/var/lib/postgresql/data postgres:9.6.2
+docker logs my_postgres_2 
+#here logs is only 4-5 lines.
+#the logs shuld only have a couple of lines of startup since it doesn't need to do all the work of initial startup.
+#this is kinda how u know that u're using the same named volume, coz the 2nd time it starts up, you'd only have like 4-5 log entires.
+docker volume ls 
+#it still just shows my_pos_db
+

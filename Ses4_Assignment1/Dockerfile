@@ -11,8 +11,8 @@ COPY package*.json ./
 
 
 RUN apk add --no-cache tini 
-RUN npm install 
-RUN npm cache clean --force
+RUN npm install && npm cache clean --force
+#&& states that 2nd command will run if 1st command does, it's a good practice to run cleanup in the same line as installation.
 
 COPY . .
   
