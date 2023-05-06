@@ -1,4 +1,4 @@
-Task: 
+# Task: 
 _________
 
 1. Take existing Node.js app and Dockerize it.
@@ -11,8 +11,6 @@ Expect the build and testing part to be iterative coz it’s gonna be hard to ge
 7. then once u get it working locally, ure gonna tag it with a proper name so that it’s using ur DockerHub account names and a new repo name that u can create on ur own.  Then ure gonna push it to Docker Hub. 
 8. Now if it’s there and it looks correct, then remove the local image our of ur cache, and then we’re gonna run the container one last time so that we’ll actually re-download from DockerHub, and then run it to make sure that it’s working properly.
 
-
-Instruction given to create Dockerfile:
 __________
 # Instructions for Assignment
 
@@ -45,14 +43,9 @@ No modifications to the app should be necessary, only edits to the Dockerfile in
 - Then it needs to copy in all files from current directory into the image.
 - Then it needs to start the container with the command `/sbin/tini -- node ./bin/www`. Be sure to use JSON array syntax for CMD. (`CMD [ "something", "something" ]`)
 - In the end you should be using FROM, RUN, WORKDIR, COPY, EXPOSE, and CMD commands
+</br></br>
 
-## Bonus Extra Credit
-
-- This assignment will not have you setting up a complete image useful for local development, test, and prod. It's just meant to get you started with basic Dockerfile concepts and not focus too much on proper Node.js use in a container. **If you happen to be a Node.js Developer**, then after you get through more of this course, you should come back and use my [Node.js Docker Good Defaults](https://github.com/BretFisher/node-docker-good-defaults) sample project on GitHub to change this Dockerfile for better local development with more advanced topics.
-
-
-
-MY_NOTES: 
+# MY_NOTES: 
 _______
 I just crated the Dockerfile, this is the only file I made modifications to, rest all in this scenario was provided by the nodejs user.</br>
 - For dealing with dockerfiles, `docker build -f some_dockerfile`</br>
