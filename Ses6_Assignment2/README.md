@@ -7,7 +7,7 @@ _________
 5. Use [README.md](http://README.md) in that dir for details.
 
 <h1>The readme file in question: </h1>
-________
+
 
 # Assignment: Compose For Image Building
 
