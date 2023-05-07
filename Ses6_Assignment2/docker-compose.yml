@@ -1,0 +1,26 @@
+# create your drupal and postgres config here, based off the last assignment
+#version: '3.8'
+services:
+  my_drupal:
+    image: custom_drupal
+    ports:
+      - '8080:80'
+    build: . #the . means, just build in this directory
+    volumes: #taken from the official hub.docker.com drupal page.
+      - /var/www/html/modules
+      - /var/www/html/profiles       
+      - /var/www/html/sites      
+      - /var/www/html/themes
+    restart: always
+  my_postgres_db:
+    image: postgres:14.3
+    environment: #value taken from hub.docker.com of postgres, under compose section
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: postgres_db_shilpi
+      POSTGRES_USER: postgres_shilpi
+    restart: always
+    volumes: 
+      - /var/lib/postgresql/data
+    
+
+
