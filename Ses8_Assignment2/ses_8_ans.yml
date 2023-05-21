@@ -1,0 +1,29 @@
+version: '3.1'
+
+services:
+  my_drupal:
+    image: drupal:8.2
+    ports:
+      - '8080:80'
+    volumes:
+      - /var/www/html/modules
+      - /var/www/html/profiles
+      - /var/www/html/sites
+      - /var/www/html/themes
+    restart: always
+      
+  my_postgres_db:
+    image: postgres:14.3
+    environment:
+      - POSTGRES_PASSWORD_FILE=/run/secrets/psql-pw
+    secrets:
+      - psql-pw
+    restart: always
+    volumes: 
+      - /var/lib/postgresql/data
+
+
+secrets:
+  psql-pw:
+    external: true
+

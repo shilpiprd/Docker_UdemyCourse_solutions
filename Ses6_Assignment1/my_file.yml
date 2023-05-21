@@ -1,0 +1,31 @@
+#version: '3.8'
+services:
+  my_drupal:
+    image: drupal:9.3.13
+    ports:
+      - '8080:80'
+    volumes: #taken from the official hub.docker.com drupal page.
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles       
+      - drupal-sites:/var/www/html/sites      
+      - drupal-themes:/var/www/html/themes
+    restart: always
+  my_postgres_db:
+    image: postgres:15.2-alpine 
+    environment: #value taken from hub.docker.com of postgres, under compose section
+      POSTGRES_PASSWORD: example
+      #POSTGRES_DB: postgres_db
+      #POSTGRES_USER: postgres_username
+    restart: always
+    
+volumes:
+  drupal-modules:
+  drupal-profiles:
+  drupal-sites:
+  drupal-themes:
+
+#Tip: Drupal setup will assume the database runs on localhost, which is incorrect. You'll need to change it to the name of the service you gave to postgres
+
+#In Drupal's "set up database" step on the web installation walkthrough enter the values for the environment variables you provided
+#Database name/username/password: <details for accessing your PostgreSQL instance> (POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB; see environment variables in the description for postgres)
+#ADVANCED OPTIONS; Database host: some-postgres (Containers on the same docker-network are routable by their container-name)

@@ -1,0 +1,9 @@
+Create a Yml file, my_yml.yml (using touch)
+#go to the direcotry in which my_yml file is present 
+docker compose -f my_yml.yml up
+#now go on google, localhost:8080, now install drupal the standard way, 
+#while setting up DB, username: postgres (by default) , name: postgres(by default), under advanced setting, change from localhost to whaterver name uve given.
+docker compose -f my_yml.yml down -v
+#this would clean up and remove all the unnecessary volumes as well.
+docker compose ls 
+#shows nothing as expected.
