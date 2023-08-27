@@ -1,4 +1,4 @@
-#Task
+# Task
 _________
 1. build custom drupal image from the official repo for local testing (we’ll do some stuff to it) . 
 2. use the copose file u built in the prev assignment  
@@ -8,6 +8,9 @@ _________
 
 <h1>The readme file in question: </h1>
 
+# Commands for Terminal: 
+- docker compose up
+- docker compose down
 
 # Assignment: Compose For Image Building
 
