@@ -1,0 +1,23 @@
+#The Dockerfile you create will include instructions to use the official Node.js image from Docker Hub as the base image, which will have Node.js installed in it.
+docker build -t shilpiprd/nodejs
+docker container run -p 80:3000 --rm shilpiprd/nodejs
+#now go over onto ur browser, type localhost and you'll find your work. 
+#i built Dockerfile correctly.
+#now we gotta make sure that our iamge is tagged correctly so as to be able to push it to our repo.
+docker image tag --help
+#Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE: basically tag ur image properly
+docker image tag shilpiprd/nodejs:latest shilpi06/testing-node
+#now if u do: 
+docker image ls 
+#it'll show that the top 2 lines have the same image id again. 
+docker login 
+cat .docker/config.json #you probably wouldn't have to do this again, 
+docker push shilpi06/shilpiprd/nodejs:latest 
+
+#now if anywhere along the path, you felt like u could've made ur Dockerfile better, 
+#just change the dockerfile, do docker build -t <shilpi06/shilpiprd/nodejs> #or maybe u can give whatever name u want, 
+#then start a container from that tag name, and see if its working. 
+#then u might wanna retag it to make it ready for pushing, docker image tag <initial_name:latest> <final_tag:latest>
+#now we'll remove the image and pull it to make sure it's all working correctly
+docker image rm shilpi06/testing-node  #this is us removing from local machine
+docker container run --rm -p 80:3000 shilpi06/testing-node 
