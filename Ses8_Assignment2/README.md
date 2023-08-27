@@ -1,4 +1,4 @@
-#Task 
+# Task 
 ______
 1. Use Drupal compose file from assignment: compose-assignment-2
 2. Rename image back to official `drupal:8.2`
